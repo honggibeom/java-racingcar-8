@@ -46,10 +46,8 @@
 - 최종 우승자 이름 출력
 
 ---
-## 6️⃣ 레이싱 Service 객체(RacingService)
-- 레이싱 객체와 RacingView를 이용해 레이싱 진행
 
-## 7️⃣ Controller
+## 7️⃣ RacingController
 - InputView로 입력값 수집
-- RacingService 객체 생성 후 레이싱 진행
+- Racing 객체 생성 후 레이싱 진행
 - RacingView 통해 결과 출력
