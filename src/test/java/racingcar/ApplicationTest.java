@@ -31,6 +31,43 @@ class ApplicationTest extends NsTest {
         );
     }
 
+
+    @Test
+    void 참가자가_한명() {
+        assertRandomNumberInRangeTest(
+                () -> {
+                    run("pobi", "3");
+                    assertThat(output()).contains("pobi : --", "최종 우승자 : pobi");
+                },
+                MOVING_FORWARD, MOVING_FORWARD, STOP
+        );
+    }
+
+    @Test
+    void 차_이름_공백_테스트() {
+        assertSimpleTest(() ->
+                assertThatThrownBy(() -> runException(" ", "1"))
+                        .isInstanceOf(IllegalArgumentException.class)
+        );
+    }
+
+    @Test
+    void 라운드_횟수_공백_테스트() {
+        assertSimpleTest(() ->
+                assertThatThrownBy(() -> runException("pobi,jawe,we", " "))
+                        .isInstanceOf(IllegalArgumentException.class)
+        );
+    }
+
+    @Test
+    void 자동차_문자열_맨앞이_콤마일경우_테스트() {
+        assertSimpleTest(() ->
+                assertThatThrownBy(() -> runException(",pobi,aswe", "1"))
+                        .isInstanceOf(IllegalArgumentException.class)
+        );
+
+    }
+
     @Override
     public void runMain() {
         Application.main(new String[]{});
