@@ -9,15 +9,19 @@ public class Racing {
     private final List<Car> racingCars;
     private final PriorityQueue<Car> ranking;
 
-    public Racing(String cars) {
+    public Racing() {
         this.racingCars = new ArrayList<>();
         this.ranking = new PriorityQueue<>(Collections.reverseOrder());
+    }
+
+    public void addParticipant(String cars) {
         for (String car : cars.split(",")) {
             Car racingCar = new Car(car);
             racingCars.add(racingCar);
             ranking.add(racingCar);
         }
     }
+
 
     public void startRound() {
         for (Car car : racingCars) {

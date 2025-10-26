@@ -7,13 +7,14 @@ import racingcar.View.InputView;
 import racingcar.View.RacingView;
 
 public class RacingController {
-    InputView inputView;
-    RacingView racingView;
-    Racing racing;
+    private final InputView inputView;
+    private final RacingView racingView;
+    private final Racing racing;
 
-    public RacingController(InputView inputView, RacingView racingView) {
+    public RacingController(InputView inputView, RacingView racingView, Racing racing) {
         this.inputView = inputView;
         this.racingView = racingView;
+        this.racing = racing;
     }
 
     public void startRacing() {
@@ -23,7 +24,7 @@ public class RacingController {
         String round = inputView.inputRoundNumber();
         NumberValidator.validateNumber(round);
 
-        this.racing = new Racing(cars);
+        racing.addParticipant(cars);
         playRounds(Integer.parseInt(round));
     }
 
