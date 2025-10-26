@@ -5,7 +5,7 @@ import camp.nextstep.edu.missionutils.Randoms;
 public class Car implements Comparable<Car> {
     private final StringBuilder state;
     private final String name;
-    int pos;
+    private int pos;
 
     public Car(String name) {
         this.name = name;
