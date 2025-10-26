@@ -1,8 +1,6 @@
 package racingcar.View;
 
 import camp.nextstep.edu.missionutils.Console;
-import racingcar.Model.CarNameValidator;
-import racingcar.Model.NumberValidator;
 
 public class InputView {
     public String inputCarNames() {
